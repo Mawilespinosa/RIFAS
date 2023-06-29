@@ -1,0 +1,43 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Ingresa tus datos</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formulario" class="mt-3">
+            <div class="mb-3 align-self-center">
+              <label class="ml-4" for="numero" class="form-label">Numero Seleccionado</label>
+              <input class="ml-1 text-center fw-bold w-25" type="text" id="numero" class="form-control" aria-label="numero" name="numero">
+            </div>
+          <div class="row">
+            <div class="col">
+              <label for="nombres" class="form-label">Nombres</label>
+              <input type="text" id="nombres" class="form-control" aria-label="Nombres" name="nombres">
+            </div>
+            <div class="col">
+              <label for="apellidos" class="form-label">Apellidos</label>
+              <input type="text" id="apellidos" class="form-control" aria-label="Apellidos" name="apellidos">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="mail" class="form-control" id="correo" placeholder="ejemplo@gmail.com" name="correo">
+          </div>
+          <div class="mb-3">
+            <label for="celular" class="form-label">Celular</label>
+            <input type="tel" class="form-control" id="celular" name="celular" >
+          </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button onclick="guardar()" type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

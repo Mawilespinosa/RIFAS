@@ -1,0 +1,47 @@
+<script>
+  let iniciar = document.addEventListener('DOMContentLoaded',insertarNumeros);
+  function insertarNumeros(){
+    google.script.run.withSuccessHandler(obtenerNumeros).numerosDisponibles();
+  }
+  function obtenerNumeros(range){
+    container = document.getElementById('container');
+    range.forEach(function(dato){
+      let button = document.createElement('button');
+      button.innerHTML= dato;
+      button.id = dato;
+      button.classList.add('styled');
+      button.setAttribute('data-bs-toggle', 'modal');
+      button.setAttribute('data-bs-target', '#exampleModalCenter');
+      container.appendChild(button);
+    })
+  }
+
+  document.addEventListener("click", function(event){
+    if (event.target.className == "styled"){
+      if (event.target.id === ""){
+        alert("Numero no disponible")
+      }else{      
+      document.getElementById('numero').value = event.target.id 
+      }            
+    }
+  }, false);
+
+function guardar(e){
+
+ let numeroBoleta = document.getElementById("numero").value;
+    let nombre = document.getElementById("nombres").value;
+    let apellido = document.getElementById("apellidos").value;
+    let correo = document.getElementById("correo").value;
+    let celular = document.getElementById("celular").value;
+
+   let data = {
+    numero: numeroBoleta,
+    nombre: nombre,
+    apellido: apellido,
+    correo: correo,
+    celular: celular
+  }
+  google.script.run.withSuccessHandler().guardarDatos(data); 
+  
+}
+</script>
