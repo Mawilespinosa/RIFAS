@@ -41,7 +41,17 @@ function guardar(e){
     correo: correo,
     celular: celular
   }
-  google.script.run.withSuccessHandler().guardarDatos(data); 
+  google.script.run.withSuccessHandler().guardarDatos(data);
+/*   let url = 'https://script.google.com/macros/s/AKfycby0dfOisF42pm7Ss_4-bZmtq0XasrAyvnX1ngVu6GQ/dev'
+  let win = window.open(url); */
+  container = document.getElementById('container');
+  container.innerHTML='';
+  setTimeout(function(){
+    google.script.run.withSuccessHandler(obtenerNumeros).numerosDisponibles();
+  }, 1000);
   
 }
+
+
+
 </script>

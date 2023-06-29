@@ -18,7 +18,6 @@ function numerosDisponibles(){
 function guardarDatos(data){ 
   let ult =  HOJA.getRange("C"+(HOJA.getLastRow()+1)).getNextDataCell(SpreadsheetApp.Direction.UP).getRow()+1;  
   
-  
   let numero = data.numero;
   let nombre = data.nombre;
   let apellido = data.apellido;
@@ -33,4 +32,17 @@ function guardarDatos(data){
 
   // Pega los datos en el rango especificado
   rango.setValues(datos);
+
+  let numEliminar = (numero*1) + 2;
+  HOJA.getRange(numEliminar,1).clearContent();
+
+}
+
+function reiniciar(){
+  for(let i = 0; i < 100; i++ ){
+    fila = i + 2
+    HOJA.getRange(fila,1).setValue(i);
+    HOJA.getRange(2,1).setValue('00');
+  }
+  HOJA.getRange(2,3,100,5).clearContent();
 }
